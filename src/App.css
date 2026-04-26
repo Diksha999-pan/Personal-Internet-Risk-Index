@@ -1,0 +1,294 @@
+/* Dark Cybersecurity Theme */
+:root {
+  --bg-primary: #0f172a; /* slate-900 */
+  --bg-secondary: #1e293b; /* slate-800 */
+  --text-primary: #f1f5f9; /* slate-100 */
+  --text-secondary: #cbd5e1; /* slate-300 */
+  --border: #334155; /* slate-700 */
+  --green: #22c55e;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 1.1em;
+}
+
+/* Shield Component */
+.shield-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.shield {
+  font-size: 6em;
+  transition: color 0.5s ease, transform 0.3s ease;
+}
+
+.shield:hover {
+  transform: scale(1.05);
+}
+
+.risk-level {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Risk Meter Component */
+.risk-meter {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.meter-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.score {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.meter-bar {
+  height: 12px;
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  transition: width 0.8s ease, background-color 0.5s ease;
+  border-radius: 6px;
+}
+
+/* Input Card Component */
+.input-card {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.input-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.status {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.password-strength {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.password-bar {
+  width: 20px;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.password-bar.active {
+  background: var(--green);
+}
+
+.password-bar:hover {
+  background: var(--yellow);
+}
+
+.number-input {
+  width: 60px;
+  padding: 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 1em;
+}
+
+.wifi-toggle {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.wifi-toggle button {
+  padding: 8px 12px;
+  background: var(--border);
+  border: none;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.wifi-toggle button.active {
+  background: var(--green);
+  color: var(--bg-primary);
+}
+
+.wifi-toggle button:hover {
+  background: var(--yellow);
+  color: var(--bg-primary);
+}
+
+/* Suggestions Component */
+.suggestions {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.suggestions h3 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.suggestions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.suggestions li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  padding-left: 20px;
+}
+
+.suggestions li::before {
+  content: '•';
+  color: var(--green);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.suggestions li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .app {
+    padding: 15px;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  .shield {
+    font-size: 4em;
+  }
+
+  .risk-level {
+    font-size: 1.2em;
+  }
+
+  .meter-label {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .score {
+    font-size: 1.5em;
+  }
+
+  .checklist-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .password-strength,
+  .number-input,
+  .wifi-toggle {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
